@@ -1,0 +1,170 @@
+mixed-port: 7890
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 0.0.0.0:9090
+secret: "hly0928"
+experimental:
+  ignore-resolve-fail: true
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+    - ".srv.nintendo.net"
+    - ".stun.playstation.net"
+    - "xbox.*.microsoft.com"
+    - ".xboxlive.com"
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+  nameserver:
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+
+proxies:
+
+proxy-groups:
+  - name: Apple
+    type: select
+    proxies:
+      - DIRECT
+      - Proxy
+  - name: Telegram
+    type: select
+    proxies:
+      - Proxy
+      - DIRECT
+  - name: Netflix
+    type: select
+    proxies:
+      - Streaming
+      - DIRECT
+  - name: Netease Music
+    type: select
+    proxies:
+      - DIRECT
+      - Proxy
+  - name: Streaming
+    type: select
+    proxies:
+      - Proxy
+      - DIRECT
+  - name: StreamingSE
+    type: select
+    proxies:
+      - DIRECT
+      - Proxy
+  - name: Advertising
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: Final
+    type: select
+    proxies:
+      - Proxy
+      - DIRECT
+
+proxy-providers:
+
+rule-providers:
+  Unbreak:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Unbreak.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Unbreak.yaml
+    interval: 86400
+  Advertising:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Advertising.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Advertising.yaml
+    interval: 86400
+  Hijacking:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Hijacking.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Hijacking.yaml
+    interval: 86400
+  Privacy:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Privacy.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Privacy.yaml
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Apple.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/Apple/Apple.yaml
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Telegram.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/Telegram/Telegram.yaml
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Netflix.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Video/Netflix.yaml
+    interval: 86400
+  NeteaseMusic:
+    type: http
+    behavior: classical
+    path: ./rule-providers/NeteaseMusic.yaml
+    url: https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Clash/Ruleset/Netease%20Music.yaml
+    interval: 86400
+  Streaming:
+    type: http
+    behavior: classical
+    path: ./rule-providers/StreamingMedia/Streaming.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+    interval: 86400
+  StreamingSE:
+    type: http
+    behavior: classical
+    path: ./rule-providers/StreamingMedia/StreamingSE.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/StreamingSE.yaml
+    interval: 86400
+  Global:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Global.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Global.yaml
+    interval: 86400
+  China:
+    type: http
+    behavior: classical
+    path: ./rule-providers/China.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/China.yaml
+    interval: 86400
+  LAN:
+    type: http
+    behavior: classical
+    path: ./rule-providers/LAN.yaml
+    url: https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Clash/Ruleset/LAN.yaml
+    interval: 86400
+
+rules:
+  - RULE-SET,Unbreak,DIRECT
+  - RULE-SET,Advertising,Advertising
+  - RULE-SET,Hijacking,Advertising
+  - RULE-SET,Privacy,Advertising
+  - RULE-SET,Apple,Apple
+  - RULE-SET,Telegram,Telegram
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,NeteaseMusic,NetEase Music
+  - RULE-SET,Streaming,Streaming
+  - RULE-SET,StreamingSE,StreamingSE
+  - RULE-SET,Global,Proxy
+  - RULE-SET,China,DIRECT
+  - RULE-SET,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,Final

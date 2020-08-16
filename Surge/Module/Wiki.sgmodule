@@ -1,0 +1,9 @@
+#!name=Rewrite Wikipedia to Wikiwand
+#!desc=Rewrite requests for wikipedia.org to wikiwand.com.
+
+[URL Rewrite]
+^https?:\/\/([a-zA-Z]+)\.(m\.)?wikipedia\.org\/wiki https://www.wikiwand.com/$1 302
+^https?:\/\/zh\.(m\.)?wikipedia\.org\/zh(-[a-zA-Z]+)?(?=\/) https://www.wikiwand.com/zh$2 302
+
+[MITM]
+hostname = %APPEND% *.wikipedia.org

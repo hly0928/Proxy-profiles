@@ -1,0 +1,19 @@
+#!name=Steven's Custom Adlist
+#!desc=Adlist for personal use.
+#!system=ios
+
+[Rule]
+# > NetEase Music
+URL-REGEX,^https?:\/\/interface3?\.music\.163\.com\/eapi\/(ad|abtest|banner|cloudvideo|event|experiment|mlivestream|mlog|msg|socialsquare|sp|store|videotimeline|webcache|hot\/(?!search)|comment\/(banner|hotwall|tips)|content\/exposure\/comment\/banner|(usersafe\/)?pl\/count),REJECT
+
+# > Pixiv
+AND,((USER-AGENT,pixiv*), (NOT,((DOMAIN-KEYWORD,pixiv)))),REJECT
+# >> Pixiv Live
+URL-REGEX,^https?:\/\/app-api\.pixiv\.net\/v1\/live\/,REJECT
+
+# > Zhihu
+USER-AGENT,AVOS*,REJECT
+DOMAIN,appcloud2.zhihu.com,REJECT
+
+[MITM]
+hostname = %APPEND% interface*.music.163.com, app-api.pixiv.net

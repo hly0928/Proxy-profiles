@@ -1,0 +1,9 @@
+#!name=Allow WiFi Access
+#!desc=Provide HTTP (port 6152) and SOCKS5 (port 6153) proxies for other devices on the same WiFi.
+
+[General]
+http-listen = 0.0.0.0:6152
+socks5-listen = 0.0.0.0:6153
+allow-wifi-access = true
+wifi-access-http-port = 6152
+wifi-access-socks5-port = 6153
