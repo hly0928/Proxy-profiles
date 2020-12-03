@@ -6,6 +6,9 @@ hostname = interface*.music.163.com, app-api.pixiv.net, *.wikipedia.org
 # > Pixiv Live
 ^https?:\/\/app-api\.pixiv\.net\/v1\/live\/ url reject-200
 
+# > Zhihu
+^https?:\/\/static\.zhihu\.com\/heifetz\/main\.signflow.*\.js$ url reject-200
+
 # > Wikipedia to Wikiwand
 ^https?:\/\/([a-zA-Z]+)\.(m\.)?wikipedia\.org\/wiki url 302 https://www.wikiwand.com/$1
 ^https?:\/\/zh\.(m\.)?wikipedia\.org\/zh(-[a-zA-Z]+)?(?=\/) url 302 https://www.wikiwand.com/zh$2

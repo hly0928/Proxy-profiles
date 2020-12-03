@@ -1,0 +1,8 @@
+#!name=Remove Zhihu Login Prompt
+#!desc=This module removes login prompt on Zhihu, allowing you to browse without signing in.
+
+[Rule]
+URL-REGEX,^https?:\/\/static\.zhihu\.com\/heifetz\/main\.signflow.*\.js$,REJECT
+
+[MITM]
+hostname = %APPEND% static.zhihu.com
