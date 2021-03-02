@@ -34,6 +34,11 @@ proxy-groups:
     proxies:
       - DIRECT
       - Proxy
+  - name: Steam
+    type: select
+    proxies:
+      - Proxy
+      - DIRECT
   - name: Telegram
     type: select
     proxies:
@@ -103,6 +108,12 @@ rule-providers:
     path: ./rule-providers/Apple.yaml
     url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/Apple/Apple.yaml
     interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Steam.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/Game/Steam.yaml
+    interval: 86400
   Telegram:
     type: http
     behavior: classical
@@ -164,6 +175,7 @@ rules:
   - RULE-SET,Hijacking,Advertising
   - RULE-SET,Privacy,Advertising
   - RULE-SET,Apple,Apple
+  - RULE-SET,Steam,Steam
   - RULE-SET,Telegram,Telegram
   - RULE-SET,Netflix,Netflix
   - RULE-SET,NeteaseMusic,NetEase Music

@@ -11,9 +11,5 @@ AND,((USER-AGENT,pixiv*), (NOT,((DOMAIN-KEYWORD,pixiv)))),REJECT
 # >> Pixiv Live
 URL-REGEX,^https?:\/\/app-api\.pixiv\.net\/v1\/live\/,REJECT
 
-# > Zhihu
-USER-AGENT,AVOS*,REJECT
-DOMAIN,appcloud2.zhihu.com,REJECT
-
 [MITM]
 hostname = %APPEND% interface*.music.163.com, app-api.pixiv.net

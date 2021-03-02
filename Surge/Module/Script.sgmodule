@@ -3,32 +3,6 @@
 #!system=ios
 
 [Script]
-# > Bilibili
-Bilibili Account = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20account.js,script-update-interval=0
-Bilibili Feed = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20feed.js,script-update-interval=0
-Bilibili Live = type=http-response,pattern=^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20live.js,script-update-interval=0
-Bilibili Reply = type=http-response,pattern=^https?:\/\/api\.bilibili\.com\/x\/v2\/reply\/main\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20reply.js,script-update-interval=0
-Bilibili Tab = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20tab.js,script-update-interval=0
-Bilibili View Relate = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/view\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20view%20relate.js,script-update-interval=0
-# > Zhihu
-Zhihu Answer = type=http-response,pattern=^https:\/\/api\.zhihu\.com\/v4\/questions,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20answer.js,script-update-interval=0
-Zhihu Feed = type=http-response,pattern=^https:\/\/api\.zhihu\.com\/moments\/recommend,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js,script-update-interval=0
-Zhihu Link = type=http-response,pattern=^https?:\/\/link\.zhihu\.com\/\?target=,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20link.js,script-update-interval=0
-Zhihu People = type=http-response,pattern=^https:\/\/api\.zhihu\.com\/people,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20people.js,script-update-interval=0
-Zhihu Recommend = type=http-response,pattern=^https:\/\/api\.zhihu\.com\/topstory\/recommend,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20recommend.js,script-update-interval=0
-# > JD Historical Prices
-JD Historical Prices = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(wareBusiness|serverConfig),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js,script-update-interval=0
-# > Taobao Historical Prices
-Taobao Historical Prices = type=http-response,pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,script-update-interval=0
-Taobao Historical Prices = type=http-response,pattern=^https?:\/\/trade-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.detail\.getdetail,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,script-update-interval=0
-# > Netflix Ratings
-Netflix Ratings = type=http-request,pattern=^https?:\/\/ios\.prod\.ftl\.netflix\.com\/iosui\/user\/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,script-update-interval=0
-Netflix Ratings = type=http-response,pattern=^https?:\/\/ios\.prod\.ftl\.netflix\.com\/iosui\/user\/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,script-update-interval=0
-# > YouTube
-YouTube = type=http-request,pattern=^https:\/\/[\s\S]*\.googlevideo\.com\/.*&(oad|ctier),script-path=https://Choler.github.io/Surge/Script/YouTube.js,script-update-interval=0
-# > Bahamut Animation
-Bahamut = type=http-request,pattern=^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bahamut.js,script-update-interval=0
-Bahamut = type=http-response,pattern=^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bahamut.js,script-update-interval=0
 # > Pixiv Premium
 Pixiv Premium = type=http-response,pattern=^https:\/\/oauth\.secure\.pixiv\.net\/auth\/token,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Surge/Script/pixiv_premium.js,script-update-interval=0
 # > Scanner Pro
@@ -37,4 +11,4 @@ Scanner Pro = type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/p
 VSCO Membership = type=http-response,pattern=^https?:\/\/vsco\.co\/api\/subscriptions\/2\.1\/user-subscriptions\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/vsco.js,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% ap*.bilibili.com, api.live.bilibili.com, api.zhihu.com, link.zhihu.com, api.m.jd.com, amdc.m.taobao.com, trade-acs.m.taobao.com, ios.prod.ftl.netflix.com, *.googlevideo.com, api.gamer.com.tw, oauth.secure.pixiv.net, ap*.intsig.net, vsco.co
+hostname = %APPEND% oauth.secure.pixiv.net, ap*.intsig.net, vsco.co

@@ -1,31 +1,5 @@
-hostname = ap*.bilibili.com, api.live.bilibili.com, api.zhihu.com, link.zhihu.com, api.m.jd.com, amdc.m.taobao.com, trade-acs.m.taobao.com, ios.prod.ftl.netflix.com, *.googlevideo.com, api.gamer.com.tw, oauth.secure.pixiv.net, ap*.intsig.net, vsco.co
+hostname = oauth.secure.pixiv.net, ap*.intsig.net, vsco.co
 
-# > Bilibili
-^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine\?access_key url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20account.js
-^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\?access_key url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20feed.js
-^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\?access_key url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20live.js
-^https?:\/\/api\.bilibili\.com\/x\/v2\/reply\/main\?access_key url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20reply.js
-^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\?access_key url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20tab.js
-^https?:\/\/app\.bilibili\.com\/x\/v2\/view\?access_key url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20view%20relate.js
-# > Zhihu
-^https:\/\/api\.zhihu\.com\/v4\/questions url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20answer.js
-^https:\/\/api\.zhihu\.com\/moments\/recommend url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js
-^https?:\/\/link\.zhihu\.com\/\?target= url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20link.js
-^https:\/\/api\.zhihu\.com\/people\/ url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20people.js
-^https:\/\/api\.zhihu\.com\/topstory\/recommend url script-response-body https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20recommend.js
-# > JD Historical Prices
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
-# > Taobao Historical Prices
-^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
-^https?:\/\/trade-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.detail\.getdetail url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
-# > Netflix Ratings
-^https?:\/\/ios\.prod\.ftl\.netflix\.com\/iosui\/user\/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D url script-request-header https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
-^https?:\/\/ios\.prod\.ftl\.netflix\.com\/iosui\/user\/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
-# > YouTube
-^https:\/\/[\s\S]*\.googlevideo\.com\/.*&(oad|ctier) url script-request-body https://Choler.github.io/Surge/Script/YouTube.js
-# > Bahamut Animation
-^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php url script-request-header https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bahamut.js
-^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bahamut.js
 # > Pixiv Premium
 ^https:\/\/oauth\.secure\.pixiv\.net\/auth\/token url script-response-body https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Surge/Script/pixiv_premium.js
 # > Scanner Pro
