@@ -17,6 +17,9 @@ dns:
     - ".stun.playstation.net"
     - "xbox.*.microsoft.com"
     - ".xboxlive.com"
+    - "dns.msftncsi.com"
+    - "www.msftncsi.com"
+    - "www.msftconnecttest.com"
   default-nameserver:
     - 223.5.5.5
     - 223.6.6.6
