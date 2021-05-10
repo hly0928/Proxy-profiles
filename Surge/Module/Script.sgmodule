@@ -5,10 +5,6 @@
 [Script]
 # > Pixiv Premium
 Pixiv Premium = type=http-response,pattern=^https:\/\/oauth\.secure\.pixiv\.net\/auth\/token,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Surge/Script/pixiv_premium.js,script-update-interval=0
-# > Scanner Pro
-Scanner Pro = type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js,script-update-interval=0
-# > VSCO Membership
-VSCO Membership = type=http-response,pattern=^https?:\/\/vsco\.co\/api\/subscriptions\/2\.1\/user-subscriptions\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/vsco.js,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% oauth.secure.pixiv.net, ap*.intsig.net, vsco.co
+hostname = %APPEND% oauth.secure.pixiv.net

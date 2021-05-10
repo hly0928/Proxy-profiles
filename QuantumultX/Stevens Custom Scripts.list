@@ -1,8 +1,4 @@
-hostname = oauth.secure.pixiv.net, ap*.intsig.net, vsco.co
+hostname = oauth.secure.pixiv.net
 
 # > Pixiv Premium
 ^https:\/\/oauth\.secure\.pixiv\.net\/auth\/token url script-response-body https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Surge/Script/pixiv_premium.js
-# > Scanner Pro
-^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js
-# > VSCO Membership
-^https?:\/\/vsco\.co\/api\/subscriptions\/2\.1\/user-subscriptions\/ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/vsco.js
