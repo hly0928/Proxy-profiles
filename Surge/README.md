@@ -16,6 +16,12 @@ https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Surge/Module/MIT
 
 ### Add-on
 
+- Block HTTP3/QUIC Requests
+
+```
+https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Surge/Module/Block%20QUIC.sgmodule
+```
+
 - DNS over HTTPS (Ali)
 
 ```
@@ -58,12 +64,6 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bil
 
 ```
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.sgmodule
-```
-
-- Zhihu Login Prompt
-
-```
-https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Surge/Module/Zhihu%20Login.sgmodule
 ```
 
 - YouTube Ads *(iOS Only)*

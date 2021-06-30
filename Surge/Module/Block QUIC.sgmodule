@@ -1,0 +1,5 @@
+#!name=Block HTTP3/QUIC Requests
+#!desc=Reject HTTP3/QUIC requests for better network performance.
+
+[Rule]
+AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
