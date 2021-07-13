@@ -168,6 +168,7 @@ rules:
   - RULE-SET,Privacy,Advertising
   - RULE-SET,Apple,Apple
   - RULE-SET,Steam,Steam
+  - DOMAIN-SUFFIX,steamcommunity.com,Steam
   - RULE-SET,Telegram,Telegram
   - RULE-SET,Netflix,Netflix
   - RULE-SET,Streaming,Streaming
