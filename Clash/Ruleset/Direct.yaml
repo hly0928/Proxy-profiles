@@ -1,3 +1,5 @@
 payload:
+  # > China Telecom
+  - IP-CIDR,172.25.249.8/32,no-resolve
   # > QQ
   - DOMAIN-SUFFIX,qcloud.com
