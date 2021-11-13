@@ -1,0 +1,10 @@
+#!name=UESTC Pass
+#!desc=Use at your own risk.
+
+[URL Rewrite]
+^https:\/\/smaco2\.uestc\.edu\.cn\/wx\/autoLogin\?aim=tempSelfSign-controllerId-.+?\$0&.* https://hly0928.github.io/UESTC-OUT_others/ 302
+^https:\/\/smaco2\.uestc\.edu\.cn\/wx\/autoLogin\?aim=tempSelfSign-controllerId-.+?\$1&.* https://hly0928.github.io/UESTC-IN_others/ 302
+^https:\/\/smaco2\.uestc\.edu\.cn\/ _ reject
+
+[MITM]
+hostname = %APPEND% smaco2.uestc.edu.cn
