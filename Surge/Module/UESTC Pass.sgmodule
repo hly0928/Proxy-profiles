@@ -1,10 +1,12 @@
 #!name=UESTC Pass
-#!desc=Use at your own risk.
+#!desc=For testing purposes only.
 
-[URL Rewrite]
-^https:\/\/smaco2\.uestc\.edu\.cn\/wx\/autoLogin\?aim=tempSelfSign-controllerId-.+?\$0&.* https://hly0928.github.io/UESTC-OUT_others/ 302
-^https:\/\/smaco2\.uestc\.edu\.cn\/wx\/autoLogin\?aim=tempSelfSign-controllerId-.+?\$1&.* https://hly0928.github.io/UESTC-IN_others/ 302
-^https:\/\/smaco2\.uestc\.edu\.cn\/ _ reject
+[Rule]
+DOMAIN,smaco2.uestc.edu.cn,REJECT
+
+[Map Local]
+^https:\/\/smaco2\.uestc\.edu\.cn\/wx\/autoLogin\?aim=tempSelfSign-controllerId-(1000000\$7\$0\$0|1000020\$7\$0\$0|1000011\$7\$0\$0|8a9ac7ed62dbbca2016395226fb71403|030|084)&.* data="https://raw.githubusercontent.com/hly0928/uestc-pass/master/out/index.html"
+^https:\/\/smaco2\.uestc\.edu\.cn\/wx\/autoLogin\?aim=tempSelfSign-controllerId-.* data="https://raw.githubusercontent.com/hly0928/uestc-pass/master/in/index.html"
 
 [MITM]
 hostname = %APPEND% smaco2.uestc.edu.cn
