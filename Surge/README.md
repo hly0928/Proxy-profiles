@@ -60,12 +60,6 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Su
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.sgmodule
 ```
 
-- Zhihu Ads *(iOS Only)*
-
-```
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.sgmodule
-```
-
 - YouTube Ads *(iOS Only)*
 
 ```
