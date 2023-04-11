@@ -37,6 +37,11 @@ proxy-groups:
     proxies:
       - DIRECT
       - Proxy
+  - name: OpenAI
+    type: select
+    proxies:
+      - Proxy
+      - DIRECT
   - name: Steam
     type: select
     proxies:
@@ -106,6 +111,12 @@ rule-providers:
     path: ./rule-providers/Apple.yaml
     url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/Apple/Apple.yaml
     interval: 86400
+  OpenAI:
+    type: http
+    behavior: classical
+    path: ./rule-providers/OpenAI.yaml
+    url: https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Clash/Ruleset/OpenAI.yaml
+    interval: 86400
   Steam:
     type: http
     behavior: classical
@@ -167,6 +178,7 @@ rules:
   - RULE-SET,Hijacking,Advertising
   - RULE-SET,Privacy,Advertising
   - RULE-SET,Apple,Apple
+  - RULE-SET,OpenAI,OpenAI
   - RULE-SET,Steam,Steam
   - DOMAIN-SUFFIX,steamcommunity.com,Steam
   - RULE-SET,Telegram,Telegram
