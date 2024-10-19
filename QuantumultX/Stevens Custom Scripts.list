@@ -1,4 +1,0 @@
-hostname = oauth.secure.pixiv.net
-
-# > Pixiv Premium
-^https:\/\/oauth\.secure\.pixiv\.net\/auth\/token url script-response-body https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Surge/Script/pixiv_premium.js

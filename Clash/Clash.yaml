@@ -52,21 +52,6 @@ proxy-groups:
     proxies:
       - Proxy
       - DIRECT
-  - name: Netflix
-    type: select
-    proxies:
-      - Streaming
-      - DIRECT
-  - name: Streaming
-    type: select
-    proxies:
-      - Proxy
-      - DIRECT
-  - name: StreamingSE
-    type: select
-    proxies:
-      - DIRECT
-      - Proxy
   - name: Advertising
     type: select
     proxies:
@@ -81,89 +66,65 @@ proxy-groups:
 proxy-providers:
 
 rule-providers:
-  Unbreak:
+  Reject:
     type: http
     behavior: classical
-    path: ./rule-providers/Unbreak.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Unbreak.yaml
+    path: ./rule-providers/Reject.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Reject.yaml
     interval: 86400
-  Advertising:
+  Special:
     type: http
     behavior: classical
-    path: ./rule-providers/Advertising.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Advertising.yaml
-    interval: 86400
-  Hijacking:
-    type: http
-    behavior: classical
-    path: ./rule-providers/Hijacking.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Hijacking.yaml
-    interval: 86400
-  Privacy:
-    type: http
-    behavior: classical
-    path: ./rule-providers/Privacy.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Guard/Privacy.yaml
-    interval: 86400
-  Apple:
-    type: http
-    behavior: classical
-    path: ./rule-providers/Apple.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/Apple/Apple.yaml
-    interval: 86400
-  OpenAI:
-    type: http
-    behavior: classical
-    path: ./rule-providers/OpenAI.yaml
-    url: https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Clash/Ruleset/OpenAI.yaml
-    interval: 86400
-  Steam:
-    type: http
-    behavior: classical
-    path: ./rule-providers/Steam.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/Game/Steam.yaml
-    interval: 86400
-  Telegram:
-    type: http
-    behavior: classical
-    path: ./rule-providers/Telegram.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/Telegram/Telegram.yaml
-    interval: 86400
-  Netflix:
-    type: http
-    behavior: classical
-    path: ./rule-providers/Netflix.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Video/Netflix.yaml
-    interval: 86400
-  Streaming:
-    type: http
-    behavior: classical
-    path: ./rule-providers/StreamingMedia/Streaming.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/Streaming.yaml
-    interval: 86400
-  StreamingSE:
-    type: http
-    behavior: classical
-    path: ./rule-providers/StreamingMedia/StreamingSE.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/StreamingSE.yaml
-    interval: 86400
-  Global:
-    type: http
-    behavior: classical
-    path: ./rule-providers/Global.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Global.yaml
-    interval: 86400
-  China:
-    type: http
-    behavior: classical
-    path: ./rule-providers/China.yaml
-    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/China.yaml
+    path: ./rule-providers/Special.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Special.yaml
     interval: 86400
   Direct:
     type: http
     behavior: classical
     path: ./rule-providers/Direct.yaml
-    url: https://raw.githubusercontent.com/hly0928/Proxy-profiles/master/Clash/Ruleset/Direct.yaml
+    url: https://raw.githubusercontent.com/hly0928/Proxy-profiles/refs/heads/master/Clash/Ruleset/Direct.yaml
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Apple.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Apple.yaml
+    interval: 86400
+  OpenAI:
+    type: http
+    behavior: classical
+    path: ./rule-providers/OpenAI.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/OpenAI.yaml
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Steam.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Steam.yaml
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Telegram.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Telegram.yaml
+    interval: 86400
+  Proxy:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Proxy.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Proxy.yaml
+    interval: 86400
+  Domestic:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Domestic.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Domestic.yaml
+    interval: 86400
+  DomesticIP:
+    type: http
+    behavior: classical
+    path: ./rule-providers/DomesticIP.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Domestic%20IPs.yaml
     interval: 86400
   LAN:
     type: http
@@ -173,21 +134,16 @@ rule-providers:
     interval: 86400
 
 rules:
-  - RULE-SET,Unbreak,DIRECT
-  - RULE-SET,Advertising,Advertising
-  - RULE-SET,Hijacking,Advertising
-  - RULE-SET,Privacy,Advertising
+  - RULE-SET,Reject,Advertising
+  - RULE-SET,Special,DIRECT
+  - RULE-SET,Direct,DIRECT
   - RULE-SET,Apple,Apple
   - RULE-SET,OpenAI,OpenAI
   - RULE-SET,Steam,Steam
-  - DOMAIN-SUFFIX,steamcommunity.com,Steam
   - RULE-SET,Telegram,Telegram
-  - RULE-SET,Netflix,Netflix
-  - RULE-SET,Streaming,Streaming
-  - RULE-SET,StreamingSE,StreamingSE
-  - RULE-SET,Global,Proxy
-  - RULE-SET,China,DIRECT
-  - RULE-SET,Direct,DIRECT
+  - RULE-SET,Proxy,Proxy
+  - RULE-SET,Domestic,DIRECT
+  - RULE-SET,DomesticIP,DIRECT
   - RULE-SET,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,Final

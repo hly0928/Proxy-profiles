@@ -1,6 +1,0 @@
-# > China Telecom
-ip-cidr, 172.25.249.8/32, direct
-# > QQ
-host-suffix, qcloud.com, direct
-# > Jegotrip
-user-agent, Roam, direct

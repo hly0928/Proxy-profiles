@@ -1,1 +1,1 @@
-Customized proxy rules/scripts by Steven. For personal use only.
+Customized proxy rules/scripts by Clem. For personal use only.
