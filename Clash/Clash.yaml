@@ -66,11 +66,11 @@ proxy-groups:
 proxy-providers:
 
 rule-providers:
-  Reject:
+  AdBlock:
     type: http
     behavior: classical
-    path: ./rule-providers/Reject.yaml
-    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Reject.yaml
+    path: ./rule-providers/AdBlock.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/AdBlock.yaml
     interval: 86400
   Special:
     type: http
@@ -84,17 +84,17 @@ rule-providers:
     path: ./rule-providers/Direct.yaml
     url: https://raw.githubusercontent.com/hly0928/Proxy-profiles/refs/heads/master/Clash/Ruleset/Direct.yaml
     interval: 86400
+  AI:
+    type: http
+    behavior: classical
+    path: ./rule-providers/AI.yaml
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/AI%20Suite.yaml
+    interval: 86400
   Apple:
     type: http
     behavior: classical
     path: ./rule-providers/Apple.yaml
     url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/Apple.yaml
-    interval: 86400
-  OpenAI:
-    type: http
-    behavior: classical
-    path: ./rule-providers/OpenAI.yaml
-    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Clash/Provider/OpenAI.yaml
     interval: 86400
   Steam:
     type: http
@@ -134,11 +134,11 @@ rule-providers:
     interval: 86400
 
 rules:
-  - RULE-SET,Reject,Advertising
+  - RULE-SET,AdBlock,Advertising
   - RULE-SET,Special,DIRECT
   - RULE-SET,Direct,DIRECT
+  - RULE-SET,AI,AI
   - RULE-SET,Apple,Apple
-  - RULE-SET,OpenAI,OpenAI
   - RULE-SET,Steam,Steam
   - RULE-SET,Telegram,Telegram
   - RULE-SET,Proxy,Proxy
