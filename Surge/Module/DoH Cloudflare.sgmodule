@@ -1,0 +1,6 @@
+#!name=DNS over HTTPS - Cloudflare
+#!desc=Enable DNS over HTTPS (DoH) with Cloudflare Public DNS.
+
+[General]
+dns-server = system, 1.1.1.1, 1.0.0.1
+encrypted-dns-server = https://cloudflare-dns.com/dns-query

@@ -28,6 +28,12 @@ https://raw.githubusercontent.com/hly0928/Proxy-profiles/refs/heads/master/Surge
 https://raw.githubusercontent.com/hly0928/Proxy-profiles/refs/heads/master/Surge/Module/DoH.sgmodule
 ```
 
+- DNS over HTTPS (Cloudflare)
+
+```
+https://raw.githubusercontent.com/hly0928/Proxy-profiles/refs/heads/master/Surge/Module/DoH%20Cloudflare.sgmodule
+```
+
 - Rewrite Wikipedia to Wikiwand
 
 ```
