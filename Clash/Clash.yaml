@@ -1,24 +1,29 @@
 mixed-port: 7890
 allow-lan: false
+ipv6: true
 mode: rule
 log-level: info
 external-controller: 0.0.0.0:9090
 secret: "hly0928"
 tcp-concurrent: true
 
+profile:
+  store-fake-ip: true
+
 dns:
   enable: true
-  ipv6: false
+  ipv6: true
   listen: 127.0.0.1:1053
   enhanced-mode: fake-ip
+  fallback-lazy-query: true
   fake-ip-filter:
     - "+.lan"
     - "+.local"
     - "localhost.ptlogin2.qq.com"
-    - ".srv.nintendo.net"
-    - ".stun.playstation.net"
+    - "+.srv.nintendo.net"
+    - "+.stun.playstation.net"
     - "xbox.*.microsoft.com"
-    - ".xboxlive.com"
+    - "+.xboxlive.com"
     - "dns.msftncsi.com"
     - "www.msftncsi.com"
     - "www.msftconnecttest.com"
@@ -32,13 +37,13 @@ dns:
     - 119.29.29.29
   nameserver:
     - https://dns.alidns.com/dns-query
-    - https://dos.pub/dns-query
+    - https://doh.pub/dns-query
   fallback:
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
-    - https://dos.pub/dns-query
+    - https://doh.pub/dns-query
     - 223.5.5.5
     - 223.6.6.6
     - 119.29.29.29
